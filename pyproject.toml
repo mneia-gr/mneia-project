@@ -1,0 +1,10 @@
+[tool.bandit]
+assert_used = { skips = [ "*/test_*.py" ] }
+
+[tool.isort]
+multi_line_output = 3  # https://pycqa.github.io/isort/docs/configuration/options.html#multi-line-output
+include_trailing_comma = true  # require trailing comma at the end of a list of imports in parentheses
+line_length = 120  # https://pycqa.github.io/isort/docs/configuration/options.html#line-length
+
+[tool.black]
+line-length = 120
