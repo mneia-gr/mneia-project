@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "django_musicbrainz_connector",
+    "mneia_backend",
 ]
 
 MIDDLEWARE = [
@@ -76,19 +77,20 @@ WSGI_APPLICATION = "mneia_project.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 DJANGO_MUSICBRAINZ_CONNECTOR_PASSWORD_PATH = Path.home() / "Mneia" / "django-musicbrainz-connector-secret"
 DJANGO_MUSICBRAINZ_CONNECTOR_PASSWORD = DJANGO_MUSICBRAINZ_CONNECTOR_PASSWORD_PATH.read_text().strip()
+MNEIA_BACKEND_PASSWORD_PATH = Path.home() / "Mneia" / "mneia-backend-secret"
+MNEIA_BACKEND_PASSWORD = MNEIA_BACKEND_PASSWORD_PATH.read_text().strip()
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": "mneia",
+        "ENGINE": "django.db.backends.postgresql",
+        "USER": "mneia",
+        "PASSWORD": MNEIA_BACKEND_PASSWORD,
     },
     "musicbrainz_db": {
         "NAME": "musicbrainz_db",
         "ENGINE": "django.db.backends.postgresql",
         "USER": "django_musicbrainz_connector",
         "PASSWORD": DJANGO_MUSICBRAINZ_CONNECTOR_PASSWORD,
-        # 'OPTIONS': {
-        #     'options': '-c search_path=musicbrainz'
-        # },
     },
 }
 
