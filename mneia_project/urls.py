@@ -20,7 +20,6 @@ from django.urls import include, path
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-
-    # Django MusicBrainz Connector:
-    path("dmc/", include("django_musicbrainz_connector.urls")),
+    path("api/musicbrainz/", include("django_musicbrainz_connector.urls")),  # Django MusicBrainz Connector
+    path("api/mneia/", include("mneia_backend.urls")),  # Mneia Backend
 ]
