@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "django_musicbrainz_connector",
     "mneia_backend",
+    "mneia_exporter",
 ]
 
 MIDDLEWARE = [
