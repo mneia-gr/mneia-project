@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-SECRET_KEY_PATH = Path.home() / "Mneia" / "django-secret"
+SECRET_KEY_PATH = Path.home() / "Mneia" / "mneia-config" / "django-secret"
 SECRET_KEY = SECRET_KEY_PATH.read_text().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -75,9 +75,11 @@ WSGI_APPLICATION = "mneia_project.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-DJANGO_MUSICBRAINZ_CONNECTOR_PASSWORD_PATH = Path.home() / "Mneia" / "django-musicbrainz-connector-secret"
+DJANGO_MUSICBRAINZ_CONNECTOR_PASSWORD_PATH = (
+    Path.home() / "Mneia" / "mneia-config" / "django-musicbrainz-connector-database-password"
+)
 DJANGO_MUSICBRAINZ_CONNECTOR_PASSWORD = DJANGO_MUSICBRAINZ_CONNECTOR_PASSWORD_PATH.read_text().strip()
-MNEIA_BACKEND_PASSWORD_PATH = Path.home() / "Mneia" / "mneia-backend-secret"
+MNEIA_BACKEND_PASSWORD_PATH = Path.home() / "Mneia" / "mneia-config" / "mneia-backend-database-password"
 MNEIA_BACKEND_PASSWORD = MNEIA_BACKEND_PASSWORD_PATH.read_text().strip()
 DATABASES = {
     "default": {
