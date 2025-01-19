@@ -99,6 +99,7 @@ DATABASES = {
 
 DATABASE_ROUTERS = [
     "django_musicbrainz_connector.routers.DjangoMusicBrainzConnectorDatabaseRouter",
+    "mneia_exporter.routers.MneiaExporterDatabaseRouter",
 ]
 
 # Password validation
