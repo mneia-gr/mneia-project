@@ -9,4 +9,5 @@ def test_link_attribute_count():
     database.
     """
     for link in Link.objects.all():
+        print(f"Link {link.id} attribute_count: {link.attribute_count} calculated: {link.calculated_attribute_count}")
         assert link.attribute_count == link.calculated_attribute_count
