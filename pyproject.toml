@@ -8,3 +8,6 @@ line_length = 120  # https://pycqa.github.io/isort/docs/configuration/options.ht
 
 [tool.black]
 line-length = 120
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "mneia_project.tests.settings"
