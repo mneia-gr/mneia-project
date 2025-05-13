@@ -1,4 +1,0 @@
-bandit
-isort
-black
-flake8
