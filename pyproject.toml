@@ -12,12 +12,16 @@
 # You only need test dependencies if you are running unit tests:
 test = [
     "flake8",
+    "flake8-pyproject",
     "black",
     "isort",
     "bandit",
     "coverage",
     "pytest",
 ]
+
+[tool.flake8]
+max-line-length=120
 
 [tool.bandit]
 assert_used = { skips = [ "*/test_*.py" ] }
@@ -32,3 +36,14 @@ line-length = 120
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "mneia_project.settings"
+
+[tool.coverage.run]
+source = ["."]
+omit = [
+    "manage.py",
+    "conftest.py",
+    "mneia_project/tests/*",
+]
+
+[tool.coverage.report]
+show_missing = true
