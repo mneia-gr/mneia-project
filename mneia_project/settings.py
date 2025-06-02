@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django_musicbrainz_connector",
     "mneia_backend",
     "mneia_exporter",
+    "django_wikipedia_connector",
 ]
 
 MIDDLEWARE = [
